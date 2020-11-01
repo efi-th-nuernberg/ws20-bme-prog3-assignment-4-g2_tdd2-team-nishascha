@@ -7,7 +7,7 @@ public class TriangleCheckerTest {
     public void testValidTriangle() {
 
         // Arrange
-        float a = 0;
+        float a = -2;
         float b = 4;
         float c = 4;
 
