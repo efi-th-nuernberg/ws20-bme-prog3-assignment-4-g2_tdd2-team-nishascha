@@ -7,15 +7,16 @@ public class TriangleCheckerTest {
     public void testValidTriangle() {
 
         // Arrange
-        float a = 2;
-        float b = 3;
+        float a = 0;
+        float b = 4;
         float c = 4;
 
         // Act
         TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
 
         // Assert
-        assertEquals(TriangleChecker.TriangleType.NORMAL, type);
+        /*assertEquals(TriangleChecker.TriangleType.NORMAL, type);*/
+        assertEquals(TriangleChecker.TriangleType.NONE, type);
 
     }
 
