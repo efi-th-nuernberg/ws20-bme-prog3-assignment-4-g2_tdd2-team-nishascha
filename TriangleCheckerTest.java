@@ -8,8 +8,8 @@ public class TriangleCheckerTest {
 
         // Arrange
         float a = -2;
-        float b = 4;
-        float c = 4;
+        float b = -4;
+        float c = -4;
 
         // Act
         TriangleChecker.TriangleType type = TriangleChecker.checkTriangle(a, b, c);
@@ -19,5 +19,23 @@ public class TriangleCheckerTest {
         assertEquals(TriangleChecker.TriangleType.NONE, type);
 
     }
+     @Test
+
+    public void testNoTriangleThreeNegativeSides() {
+
+        assertEquals( TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle( -1f, -1f, -1f ) );
+
+    }
+
+
+
+    @Test
+
+    public void testNoTriangleTwoNegativeSides() {
+
+        assertEquals( TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle( -1f, -1f, 1f ) );
+
+    }
+
 
 }
