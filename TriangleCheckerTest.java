@@ -18,7 +18,7 @@ public class TriangleCheckerTest {
 
     @Test 
     public void checkNormal(){
-      assertEquals(TriangleChecker.TriangleType.NORMAL, TriangleChecker.checkTriangle( 1, 2, 3 ));
+      assertEquals(TriangleChecker.TriangleType.NORMAL, TriangleChecker.checkTriangle( 8.1f, 4, 7 ));
     }
 
     @Test 
@@ -41,13 +41,17 @@ public class TriangleCheckerTest {
         assertEquals( TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle( -1f, -1f, -1f ) );
     }
 
-
-
     @Test
     public void testNoTriangleTwoNegativeSides() {
 
         assertEquals( TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle( -1f, -1f, 1f ) );
     }
+    @Test
+    public void testSideWithOverLength() {
+
+        assertEquals( TriangleChecker.TriangleType.NONE, TriangleChecker.checkTriangle( 1, 2, 5 ) );
+    }
+
 
 
 }

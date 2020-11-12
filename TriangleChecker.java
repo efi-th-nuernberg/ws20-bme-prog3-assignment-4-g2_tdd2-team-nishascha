@@ -50,7 +50,7 @@ public class TriangleChecker {
 
 public static TriangleType checkTriangle(float a, float b, float c) {
 
-  boolean basicTri = ((a+b>c) || (a+c>b) || (b+c>a)) && (a>0 && b>0 && c>0);
+  boolean basicTri = ((a+b>c) && (a+c>b) && (b+c>a)) && (a>0 && b>0 && c>0);
 	boolean equiLateral = (a == b) && (b == c);
 	boolean	isosceles = (a == b) || (b==c) || (a==c);
 
