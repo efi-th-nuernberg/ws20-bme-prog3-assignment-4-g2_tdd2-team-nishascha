@@ -50,9 +50,10 @@ public class TriangleChecker {
 
 public static TriangleType checkTriangle(float a, float b, float c) {
 
-  boolean basicTri = ((a+b>c) && (a+c>b) && (b+c>a)) && (a>0 && b>0 && c>0);
-	boolean equiLateral = (a == b) && (b == c);
-	boolean	isosceles = (a == b) || (b==c) || (a==c);
+  boolean basicTri = ((a+b>c) || (a+c>b) || (b+c>a)) && (a>0 && b>0 && c>0);
+	boolean equiLateral = (a == b) && (b == c) && (a>0 && b>0 && c>0);
+	boolean	isosceles = (a == b) || (b==c) || (a==c) && (a>0 && b>0 && c>0);
+  boolean negativeParts= (a==0 || b==0 || c==0);
 
 
     if(equiLateral && basicTri)
@@ -67,6 +68,9 @@ public static TriangleType checkTriangle(float a, float b, float c) {
 	  {
 		  return TriangleType.NORMAL;
 	  }
+    else if(negativeParts || (!basicTri && !equiLateral && !isosceles)){
     return TriangleType.NONE;
   }
+  return TriangleType.NONE;
+}
 }
